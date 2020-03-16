@@ -1,0 +1,14 @@
+[
+    {
+        "pattern": "(ci)(.*)",
+        "repl": "https://www.courrierinternational.com/article\\2"
+    },
+    {
+        "pattern": "(github)(.*)",
+        "repl": "https://github.com/oscar6echo\\2"
+    },
+    {
+        "pattern": "(vimeo)(.*)",
+        "repl": "https://vimeo.com\\2"
+    }
+]

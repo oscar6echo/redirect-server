@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>Redirect Server</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 align="center">Redirect Server</h1>
+        <p class="lead" align="center">To help keep your links tidy</p>
+
+        <p>
+            The table below contains the list redirects by decreasing order of precedence.
+            <br> Each line contains:
+            <ul>
+                <li>a
+                    <a href="https://www.regular-expressions.info/">regex</a> pattern
+                </li>
+                <li>its associated
+                    <a href="https://www.regular-expressions.info/replacetutorial.html"> replacement string</a>
+                </li>
+                <li>its source file</li>
+            </ul>
+            The priority is set:
+            <ul>
+                <li>by order of source files</li>
+                <li>then by order of entries in each source file</li>
+            </ul>
+            The redirects are extracted from the following data urls:
+            <ul>
+                {% for url in data.sources %}
+                <li>
+                    <a href="{{ url }}">{{ url }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            To update the table - refreshed every {{ data.refresh_seconds }} seconds:
+            <ul>
+                <li>add an entry to a source file</li>
+                <li>or request the addition of a new source file to the administrator</li>
+            </ul>
+
+        </p>
+
+        <div class="card border-success mb-3" style="max-width: 60%">
+            <!-- <div class="card-header">Advice</div> -->
+            <div class="card-body text-success">
+                <!-- <h5 class="card-title">Advice</h5> -->
+                <p class="card-text">
+                    <strong>Advice:</strong> Test your regex patterns and replacement strings in
+                    <a href="https://regex101.com/">regex101.com</a>
+                </p>
+            </div>
+        </div>
+        {{ data.table }}
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+flask
+Flask-Table
+requests
+apscheduler
+gunicorn
+waitress

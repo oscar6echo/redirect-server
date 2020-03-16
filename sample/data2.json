@@ -1,0 +1,11 @@
+[
+    {
+        "pattern": "(dic)(.*)",
+        "repl": "http://www.dictionary.com/browse\\2"
+    },
+    {
+        "pattern": "(cal)(.*)",
+        "repl": "https://www.lecalendrier.fr\\2"
+    }
+]
+
